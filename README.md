@@ -10,9 +10,9 @@ In order to use this app, you will first need to set up a Spotify account. Once 
 * Copy the Client_ID and Client_Secret
 * Save the app credentials in your project directory in .json format as follows:  
     `{`  
-        `"spotify_api": {`  
-            `"CLIENT_ID" : "your_client_id_here",`  
-            `"CLIENT_SECRET" : "your_client_secret_here",`  
-            `"REDIRECT" : "http://localhost:8080"`  
-        `}`  
+    &nbsp;&nbsp;&nbsp;&nbsp;`"spotify_api": {`  
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"CLIENT_ID" : "your_client_id_here",`  
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"CLIENT_SECRET" : "your_client_secret_here",`  
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"REDIRECT" : "http://localhost:8080"`  
+    &nbsp;&nbsp;&nbsp;&nbsp;`}`  
     `}`  
