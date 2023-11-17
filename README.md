@@ -1,7 +1,7 @@
 # gr8ful_live
 Gr8ful Live is a live music app that tracks shows of your favorite artists from Spotify and sends a monthly email with upcoming concerts in your area for artists you love. 
 
-### Prerequisits:
+### Usage:
 In order to use this app, you will first need to set up a Spotify account. Once you have a spotify account, login to [Spotify for Developers](https://developer.spotify.com) with your Spotify credentials.
 * Navigate to your developer dashboard
 * Create New App
