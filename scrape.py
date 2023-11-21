@@ -15,8 +15,8 @@ from datetime import timedelta
 # url = 'https://phish.com/tours/'
 # url = 'https://www.stringcheeseincident.com/tour/'
 # url ='https://www.umphreys.com/tour/'
-url = 'https://www.yondermountain.com/tour/'
-# url = 'https://www.u2.com/tour/'
+# url = 'https://www.yondermountain.com/tour/'
+url = 'https://www.u2.com/tour/'
 
 def get_web_content(url):
     try:
@@ -41,11 +41,12 @@ def selenium_scraper(url):
         main_container = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, "body")))
 
         # Get the HTML content of the main page container
-        main_container_html = main_container.get_attribute("outerHTML")
+        main_container_html = main_container.get_attribute("innerHTML")
 
         # Use BeautifulSoup to parse the HTML content
         page_soup = BeautifulSoup(main_container_html, 'html.parser')
 
+        # print(f"successfully scraped html for {page_title}" )
     finally:
         # Close the browser window
         driver.quit()
@@ -161,7 +162,7 @@ def main(url):
     containers = page_soup.find_all(container_type_pattern, class_=container_class_pattern)
 
     if not containers:
-        containers = selenium_scraper(url)
+        page_soup = selenium_scraper(url)
         containers = page_soup.find_all(container_type_pattern, class_=container_class_pattern)
 
     for container in containers:
@@ -176,7 +177,7 @@ def main(url):
 
         # Iterate through containers sequentially and print date and location
         for row in rows:
-            show_dates = row.find_all('div', class_=re.compile(r'\b(date|when)\b', re.IGNORECASE))
+            show_dates = row.find_all(row_type_pattern, class_=re.compile(r'\b(date|when)\b', re.IGNORECASE))
             show_locations = row.find_all('div', class_=re.compile(r'\b(location|where|venue|city)\b', re.IGNORECASE))
 
             # Iterate through each combination of date and location
