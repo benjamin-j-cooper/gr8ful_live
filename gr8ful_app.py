@@ -53,8 +53,8 @@ def find_band_website(band_name):
 def extract_upcoming_shows(website):
     try:
         tourwebsite = website + "/tour/"
-        response = requests.get(tourwebsite)
-        soup = BeautifulSoup(response.text, 'lxml')
+        response = Request.get(tourwebsite)
+        soup = BeautifulSoup(response.text, 'html.parser')
         # Add your logic here to extract upcoming shows based on the structure of the band's website
         upcoming_shows = soup.find("div",class_="bit-upcoming-events")
         print(upcoming_shows)
